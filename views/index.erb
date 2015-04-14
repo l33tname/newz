@@ -1,0 +1,15 @@
+<% if !news.blank? %>
+  <% for newsitem in news %>
+    <div class="row">
+		<div class="col-md-12">
+			<h2><%= newsitem.title %></h2>
+		 	<span style="color:gray;"><%= newsitem.created_at %></span>
+			<p><a href="<%= newsitem.url %>"><%= newsitem.url %></a></p>
+		</div>
+	</div>
+  <% end %>
+<% else %>
+ <div class="row">
+  <h2>Keine Nachrichten!</h2>
+ </div>
+<% end %>
