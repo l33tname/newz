@@ -14,6 +14,10 @@ configure :development do
   MongoMapper.database = 'newz'
 end
 
+configure :production do
+	MongoMapper.setup({'production' => {'uri' => ENV['MONGOLAB_URI']}}, 'production')
+end
+
 get "/" do
 	newz = Newz.sort(:created_at.desc).limit(50)
 	erb :index, {:locals => {news: newz}}
