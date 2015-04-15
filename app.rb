@@ -27,6 +27,10 @@ get "/about" do
 	"nope"
 end
 
+get "/submit" do
+	"nope"
+end
+
 get "/archiv/?" do
 	redirect "/archiv/1"
 end
