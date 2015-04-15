@@ -1,0 +1,35 @@
+<% if !news.blank? %>
+  <% for newsitem in news %>
+    <div class="row">
+    <div class="col-md-12">
+      <h2><%= newsitem.title %></h2>
+      <span style="color:gray;"><%= newsitem.created_at %></span>
+      <p><a href="<%= newsitem.url %>"><%= newsitem.url %></a></p>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+ <div class="row">
+  <h2>Keine Nachrichten!</h2>
+ </div>
+<% end %>
+
+<% if totalPage != nil && totalPage > 1 %>
+  <ul class="pagination">
+    <% if page > 1 %>
+      <li><a href="/archiv/<%= page -1 %>">&laquo;</a></li>
+    <% end %>
+
+    <% (1..totalPage).each do |i| %>
+      <% if i != page %>
+        <li><a href="/archiv/<%= i %>"><%= i %></a></li>
+      <% else %>
+        <li class="disabled"><a href="" disabled><span><%= i %></span></a></li>
+      <% end %>
+    <% end %>
+    
+    <% if totalPage > page %>
+      <li><a href="/archiv/<%= page + 1 %>">&raquo;</a></li>
+    <% end %>
+  </ul>
+<% end %>

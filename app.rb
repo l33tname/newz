@@ -27,8 +27,25 @@ get "/about" do
 	"nope"
 end
 
-get "/archiv" do
-	"nope"
+get "/archiv/?" do
+	redirect "/archiv/1"
+end
+
+get "/archiv/:page/?" do |page|
+	elementPerPage = 50
+	pageId = page.to_i
+
+	newz = Newz.paginate({
+		:order => :created_at.desc,
+		:per_page => elementPerPage,
+		:page => pageId,
+	})
+
+	total = (Newz.all.count / elementPerPage)
+
+	p total
+
+	erb :archiv, {:locals => {page: pageId, news: newz, totalPage: total}}
 end
 
 post "/create" do
