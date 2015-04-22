@@ -4,7 +4,10 @@
 		<div class="col-md-6">
 			<div class="newz">
 				<h2><%= newsitem.title %></h2>
-				<p><a href="<%= newsitem.url %>"><%= newsitem.url %></a></p>
+				<p>
+					<a class="visible-xs-inline" href="<%= newsitem.url %>"><%= newsitem.url_short 30 %></a>
+					<a class="hidden-xs" href="<%= newsitem.url %>"><%= newsitem.url_short 50 %></a>
+				</p>
 			</div>
 		</div>
 	<% '</div>' unless (index % 2) %>
