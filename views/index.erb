@@ -1,12 +1,13 @@
 <% if !news.blank? %>
-  <% for newsitem in news %>
-    <div class="row">
-		<div class="col-md-12">
-			<h2><%= newsitem.title %></h2>
-		 	<span style="color:gray;"><%= newsitem.created_at %></span>
-			<p><a href="<%= newsitem.url %>"><%= newsitem.url %></a></p>
+  <% news.each_with_index do |newsitem, index| %>
+    <% '<div class="row">' if (index % 2) %>
+		<div class="col-md-6">
+			<div class="newz">
+				<h2><%= newsitem.title %></h2>
+				<p><a href="<%= newsitem.url %>"><%= newsitem.url %></a></p>
+			</div>
 		</div>
-	</div>
+	<% '</div>' unless (index % 2) %>
   <% end %>
 <% else %>
  <div class="row">

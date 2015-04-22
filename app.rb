@@ -24,7 +24,7 @@ get "/" do
 end
 
 get "/about" do
-	"nope"
+	erb :about
 end
 
 get "/submit" do
