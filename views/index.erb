@@ -5,8 +5,11 @@
 			<div class="newz">
 				<h2><%= newsitem.title %></h2>
 				<p>
-					<a class="visible-xs-inline" href="<%= newsitem.url %>"><%= newsitem.url_short 30 %></a>
-					<a class="hidden-xs" href="<%= newsitem.url %>"><%= newsitem.url_short 50 %></a>
+					<a href="<%= newsitem.url %>">
+						<span class="visible-xs"><%= newsitem.url_short 30 %></span>
+						<span class="visible-sm"><%= newsitem.url_short 80 %></span>
+						<span class="hidden-xs hidden-sm"><%= newsitem.url_short 50 %></span>
+					</a>
 				</p>
 			</div>
 		</div>
