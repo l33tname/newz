@@ -14,6 +14,20 @@ Oder auch einfach das Sammeln von links aus Mainstream Medien die mit dieser Üb
 
 https://powerful-hamlet-5611.herokuapp.com/
 
+# Setup
+
+1. Setup ENV
+```
+MONGOLAB_URI
+USER
+PASS
+SALT
+```
+
+2. install gems
+3. run
+
+
 
 ##Build with
 

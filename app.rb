@@ -69,15 +69,7 @@ post "/admin" do
 	name = params["inputUsername"]
 	pass = params["inputPassword"]
 
-	if name == "waldi" && BCrypt::Engine.hash_secret(pass, "$2a$10$IpAVPElW3BclRC2cNnjVTO") == "$2a$10$IpAVPElW3BclRC2cNnjVTO8zaiPHtTtktZPseBtvsHm0uK4DVIXZy"
-		logedIn = true
-	end
-
-	if name == "fliiiix" && BCrypt::Engine.hash_secret(pass, "$2a$10$GrHeohK6xi9DPqQr5TAHJe") == "$2a$10$GrHeohK6xi9DPqQr5TAHJe2FuEXqK6uCbQEGF25ehGk9CzbT.JNbW"
-		logedIn = true
-	end
-
-	if logedIn == true
+	if name == ENV['USER'] && BCrypt::Engine.hash_secret(pass, ENV['SALT']) == ENV['PASS']
 		session["isLogdIn"] = true
 		redirect "/"
 	end
