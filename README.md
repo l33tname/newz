@@ -6,7 +6,7 @@ Das einzige Satiremagazin dass keine Satire ist
 
 1. Weltherschaft
 2. ???
-3: Profit!
+3. Profit!
 
 Oder auch einfach das Sammeln von links aus Mainstream Medien die mit dieser Überschrift auch in einem Satiremagazine stehen könnten.
 
