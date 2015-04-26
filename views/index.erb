@@ -1,20 +1,22 @@
 <% if !news.blank? %>
-  <% news.each_with_index do |newsitem, index| %>
-    <% '<div class="row">' if (index % 2) %>
-		<div class="col-md-6">
-			<div class="newz">
-				<h2><%= newsitem.title %></h2>
-				<p>
-					<a href="<%= newsitem.url %>">
-						<span class="visible-xs"><%= newsitem.url_short 30 %></span>
-						<span class="visible-sm"><%= newsitem.url_short 80 %></span>
-						<span class="hidden-xs hidden-sm"><%= newsitem.url_short 50 %></span>
-					</a>
-				</p>
+	<% news.each_slice(2) do |slice| %>
+	  <div class="row">
+	    <% slice.each do |newsitem| %>
+			<div class="col-md-6">
+				<div class="newz">
+					<h2><%= newsitem.title %></h2>
+					<p>
+						<a href="<%= newsitem.url %>">
+							<span class="visible-xs"><%= newsitem.url_short 30 %></span>
+							<span class="visible-sm"><%= newsitem.url_short 80 %></span>
+							<span class="hidden-xs hidden-sm"><%= newsitem.url_short 50 %></span>
+						</a>
+					</p>
+				</div>
 			</div>
-		</div>
-	<% '</div>' unless (index % 2) %>
-  <% end %>
+	    <% end %>
+	  </div>
+	<% end %>
 <% else %>
  <div class="row">
   <h2>Keine Nachrichten!</h2>
