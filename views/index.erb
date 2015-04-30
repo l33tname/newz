@@ -4,7 +4,7 @@
 	    <% slice.each do |newsitem| %>
 			<div class="col-md-6">
 				<div class="newz">
-					<h2><%= newsitem.title %></h2>
+					<h2 class="h2-slim"><%= newsitem.title %></h2>
 					<p>
 						<a href="<%= newsitem.url %>">
 							<span class="visible-xs"><%= newsitem.url_short 30 %></span>
