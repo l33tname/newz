@@ -19,7 +19,7 @@ configure :production do
 end
 
 get "/" do
-	newz = Newz.sort(:created_at.desc).limit(50)
+	newz = Newz.sort(:created_at.desc).limit(30)
 	erb :index, {:locals => {news: newz}}
 end
 
