@@ -1,8 +1,8 @@
-#Newz
+# Newz
 
 Das einzige Satiremagazin dass keine Satire ist
 
-#Absichten
+# Absichten
 
 1. Weltherschaft
 2. ???
@@ -10,7 +10,7 @@ Das einzige Satiremagazin dass keine Satire ist
 
 Oder auch einfach das Sammeln von links aus Mainstream Medien die mit dieser Überschrift auch in einem Satiremagazine stehen könnten.
 
-#Online
+# Online
 
 https://powerful-hamlet-5611.herokuapp.com/
 
@@ -29,7 +29,7 @@ SALT
 
 
 
-##Build with
+## Build with
 
 * [Sinatra](http://www.sinatrarb.com/)
 * [MongoDB](http://www.mongodb.org/) & [MongoMapper](http://mongomapper.com/)
